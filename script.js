@@ -1,5 +1,5 @@
 //Start a new get request to run the server in the backend
-const myRequest = new Request('http://localhost:3000/patients');
+const myRequest = new Request('http://localhost:1000/patients');
 
 //Capture the html ids for manupulation 
 const formOne = document.getElementById("formOne");
@@ -78,7 +78,7 @@ updateForm.addEventListener('submit', async (e) => {
 
     try {
         // Send a PATCH request to the server to update the patient
-        const response = await fetch('http://localhost:3000/update', {
+        const response = await fetch('http://localhost:1000/update', {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -135,7 +135,7 @@ async function updatePatient(id) {
 
 async function fetchPatientById(id) {
     try {
-        const response = await fetch(`http://localhost:3000/patient?id=${id}`);
+        const response = await fetch(`http://localhost:1000/patient?id=${id}`);
         if (!response.ok) {
             throw new Error('Failed to fetch patient record');
         }
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function filterPatients(searchQuery) {
-        fetch('http://localhost:3000/hospdb.json')
+        fetch('http://localhost:1000/hospdb.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

@@ -1,5 +1,5 @@
 //Start a new get request to run the server in the backend
-const myRequest = new Request('http://localhost:1000/patients');
+const myRequest = new Request('https://project-2-o5q8.onrender.com/patients');
 
 //Capture the html ids for manupulation 
 const formOne = document.getElementById("formOne");
@@ -24,7 +24,7 @@ formTwo.addEventListener('submit', event => {
     const patientAge = document.getElementById("patient-age").value;
     const patientNotes = document.getElementById("patient-notes").value;
 
-    fetch('http://localhost:3000/patients', {
+    fetch('https://project-2-o5q8.onrender.com/patients', {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(
@@ -78,7 +78,7 @@ updateForm.addEventListener('submit', async (e) => {
 
     try {
         // Send a PATCH request to the server to update the patient
-        const response = await fetch('http://localhost:1000/update', {
+        const response = await fetch('https://project-2-o5q8.onrender.com/update', {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
@@ -109,7 +109,7 @@ updateForm.addEventListener('submit', async (e) => {
 
 
 function deletePatient(id) {
-    fetch(`http://localhost:3000/delete?id=${id}`, {
+    fetch(`https://project-2-o5q8.onrender.com/delete?id=${id}`, {
         method: 'DELETE'
     })
         .then(response => {
@@ -135,7 +135,7 @@ async function updatePatient(id) {
 
 async function fetchPatientById(id) {
     try {
-        const response = await fetch(`http://localhost:1000/patient?id=${id}`);
+        const response = await fetch(`https://project-2-o5q8.onrender.com/patient?id=${id}`);
         if (!response.ok) {
             throw new Error('Failed to fetch patient record');
         }
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function filterPatients(searchQuery) {
-        fetch('http://localhost:1000/hospdb.json')
+        fetch('https://project-2-o5q8.onrender.com/hospdb.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

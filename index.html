@@ -107,7 +107,8 @@
           />
           <button type="submit">Search</button>
         </form>
-        <table id="patient-table" class="border-collapse w-full">
+       <div class="overflow-x-auto">
+          <table id="patient-table" class="border-collapse w-full">
           <thead>
             <tr>
               <th class="bg-gray-200 border border-gray-300 py-2 px-4">ID</th>
@@ -129,6 +130,7 @@
           </thead>
           <tbody id="patient-table-body"></tbody>
         </table>
+       </div>
       </div>
 
       <div class="bg-gray-300 p-4">
